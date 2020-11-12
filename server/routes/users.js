@@ -68,4 +68,12 @@ router.get("/logout", auth, (req, res) => {
     });
 });
 
+router.get("/testApi", auth, (req, res) => {
+    console.log(req)
+    return res.status(200).send({
+        success: true,
+        Data: 'Hello World'
+    });
+});
+
 module.exports = router;

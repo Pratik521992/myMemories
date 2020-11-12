@@ -8,20 +8,20 @@ const cookieParser = require("cookie-parser");
 
 const config = require("./config/key");
 
-// const mongoose = require("mongoose");
-// mongoose
-//   .connect(config.mongoURI, { useNewUrlParser: true })
-//   .then(() => console.log("DB connected"))
-//   .catch(err => console.error(err));
+ const mongoose = require("mongoose");
+ mongoose
+   .connect(config.mongoURI, { useNewUrlParser: true })
+   .then(() => console.log("DB connected"))
+   .catch(err => console.log('Error occoured'+err));
 
-const mongoose = require("mongoose");
+/*const mongoose = require("mongoose");
 const connect = mongoose.connect(config.mongoURI,
   {
     useNewUrlParser: true, useUnifiedTopology: true,
     useCreateIndex: true, useFindAndModify: false
   })
   .then(() => console.log('MongoDB Connected...'))
-  .catch(err => console.log(err));
+  .catch(err => console.log(err));*/
 
 app.use(cors())
 
@@ -34,6 +34,7 @@ app.use(bodyParser.json());
 app.use(cookieParser());
 
 app.use('/api/users', require('./routes/users'));
+app.use('/api/birthday', require('./routes/birthday'));
 
 
 //use this to show the image you have in node js server to client (react js)

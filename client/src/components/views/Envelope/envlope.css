@@ -1,0 +1,22 @@
+.env-container {
+    z-index: 1002;
+    display: flex;
+    align-items: flex-start;
+    position: relative;
+    padding: 0px;
+    padding-left: 0px !important;
+    transition: all .2s ease-in-out;
+    cursor: pointer;
+}
+
+.env-container:hover {
+    transform: scale(1.12);
+}
+
+.avatar {
+    height: 109px !important;
+    width: 109px !important;
+    position: absolute;
+    top: 36%;
+    left: 24%;
+}
