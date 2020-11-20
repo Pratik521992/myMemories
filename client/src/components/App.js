@@ -10,8 +10,8 @@ import Footer from "./views/Footer/Footer";
 import AddBirthdays from "./views/AddBirthdays";
 import Wishes from "./views/NavBar/Sections/Wishes";
 import WishCard from "./views/wishCard/wishCard";
-import CircularProgress from '@material-ui/core/CircularProgress';
 import "./app.css";
+import { Experience } from "./views/Experience/Experience";
 
 //null   Anyone Can go inside
 //true   only logged in user can go inside
@@ -28,6 +28,7 @@ function App() {
         <Switch>
           <Route exact path="/" component={Auth(LandingPage, null)} />
           <Route exact path="/login" component={Auth(LoginPage, false)} />
+          <Route exact path="/experience" component={Auth(Experience, true)} />
           <Route exact path="/register" component={Auth(RegisterPage, false)} />
           <Route exact path="/wishes" component={Auth(Wishes, true)} />
         </Switch>

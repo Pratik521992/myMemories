@@ -21,6 +21,7 @@ function Wishes() {
       return null;
     }
     return wishes.map((wish) => {
+      console.log(wish)
       return <Envelope wish={wish} />;
     });
   };

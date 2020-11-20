@@ -4,13 +4,14 @@ import Button from "@material-ui/core/Button";
 import KeyboardArrowLeftIcon from "@material-ui/icons/KeyboardArrowLeft";
 import "./wishCard.css";
 import { closeWishModal, getNextPage } from "../../../_actions/modal_actions";
+import Dialog from '@material-ui/core/Dialog';
 
-function WishCard() {
+function WishCard({wish}) {
   let timer = null;
   var card = "";
   const dispatch = useDispatch();
   const pagination = useSelector((state) => state.modal.pagination);
-  const wish = useSelector((state) => state.modal.wish);
+  //const wish = useSelector((state) => state.modal.wish);
   const open = useSelector((state) => state.modal.wishModalStatus);
 
   const handleClose = () => {
@@ -22,20 +23,15 @@ function WishCard() {
     dispatch(getNextPage(pagination + 1))
   }
 
-  if (!open || !wish || window.location.pathname !== "/wishes") {
+  if (!wish) {
     return null;
   }
+  console.log(open)
   return (
+    
+
     <div className="card-container">
-      <Button
-        variant="contained"
-        color="primary"
-        onClick={handleClose}
-        className="backButton"
-        endIcon={<KeyboardArrowLeftIcon />}
-      >
-        Back
-      </Button>
+      
       <div className="card">
         <div className="back"></div>
         <div className="front">
@@ -47,19 +43,12 @@ function WishCard() {
           </div>
         </div>
         <div className="text-container">
-          <p id="head">Happy Birthday </p>
-          <p>{wish.wishes}</p>
-          <p>{wish.writerName}</p>
+          <p id="head">{wish.main}</p>
+          <p className="txt">{wish.wishes}</p>
+          <p className="txt">{wish.writerName}</p>
         </div>
       </div>
-      <Button
-        variant="contained"
-        color="primary"
-        onClick={handleNext}
-        endIcon={<KeyboardArrowLeftIcon />}
-      >
-        NEXT
-      </Button>
+      
     </div>
   );
 }

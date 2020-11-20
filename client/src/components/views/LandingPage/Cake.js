@@ -6,8 +6,8 @@ function Cake() {
     <div className="app">
       <div className="msg-container">
         <h1>
-          <span>"Happy</span>
-          <span>Birthday"</span>
+          <span>"</span>
+          <span>"</span>
         </h1>
       </div>
       <div className="cake">

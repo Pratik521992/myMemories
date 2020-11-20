@@ -1,10 +1,8 @@
 
 .card-container {
 	z-index: 998;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  position: absolute;
+  
+  position: relative;
   width: 100%;
   display: flex;
   justify-content: flex-end;
@@ -21,44 +19,45 @@
 	z-index: 1000;
   cursor: pointer;
 	 position: relative;
-	 width: 300px;
-	 height: 375px;
+	 width: 400px;
+	 height: 575px;
 	 border: 10px solid rgba(214, 155, 155, 0.637);
 	 margin: 0px auto 0 auto;
 	 box-shadow: inset 10px 0px 15px 0px rgba(0, 0, 0, 0.1);
-    background-image: linear-gradient(to bottom, rgba(255, 255, 255), rgba(255, 255, 255, 0.71)), url("https://images.unsplash.com/photo-1527481138388-31827a7c94d5?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60");
-
+    
 background-position: center; /* Center the image */
   background-repeat: no-repeat; /* Do not repeat the image */
   background-size: cover;
-	 background-color: #e6f0e6;
+  background-color: rgb(122,89,228);
 }
  .card .text-container {
 	 width: 80%;
 	 height: 80%;
 	 margin: auto;
+	 font-family: 'Montserrat', sans-serif;
+	 
 }
  .strikethrough {
 	 text-decoration: line-through;
 }
  .card .text-container #head {
-	 font-family: 'Nobile', sans-serif;
-	 font-size: 1.5em;
+	 color: rgb(160,208,248);
+	 font-size: 1.6em;
+	 font-weight: bold;
 	 margin: 60px auto 60px auto;
 }
- .card p {
-	 font-size: 1.1em;
-	 line-height: 1.4;
-	 font-family: 'Nobile';
-	 color: #331717;
-	 font-style: italic;
+ .card .txt {
+	 font-size: 1.05em;
+	 line-height: 1.37;
+	 font-weight: bolder;
+	 color: rgb(248,221,116);
 	 text-align: center;
 	 margin: 30px auto 0px auto;
 }
  .card .front {
 	 position: absolute;
-	 width: 300px;
-	 height: 375px;
+	 width: 400px;
+	 height: 575px;
 	 margin: -10px 0px 0px -10px;
 	 border: 10px solid rgba(214, 155, 155, 0.637);
 	 backface-visibility: hidden;
@@ -73,17 +72,15 @@ background-position: center; /* Center the image */
 }
  .card:hover .front {
 	 transform: perspective(800px) rotateY(-170deg);
-	 background-color: #41718d;
-}
+	 }
  .card:hover .back {
 	 transform: perspective(800px) rotateY(-170deg);
 	 box-shadow: 7px 0px 5px 0px rgba(0, 0, 0, 0.3), inset 2px 0px 15px 0px rgba(0, 0, 0, 0.1);
-	 background-color: #d2dcd2;
-}
+	}
  .card .back {
 	 position: absolute;
-	 width: 300px;
-	 height: 375px;
+	 width: 400px;
+	 height: 575px;
 	 border: 10px solid rgba(214, 155, 155, 0.637);
 	 margin: -10px 0px 0px -10px;
 	 backface-visibility: visible;
@@ -98,6 +95,7 @@ background-position: center; /* Center the image */
 
 .imgset
 {
+	height: 539px;
   position: relative;
   z-index: 1;
   margin-bottom: -215px;
